@@ -157,7 +157,9 @@ class HashTable:
                 if self.storage[index] is None:
                     self.num_items -= 1
                     
-                    # having deleted an entry, let's check the lo threshold
+                    # having deleted an entry, halve the capacity if load factor dropped below low threshold
+                    # we also want to check that capacity is at least twice the minimum capacity allowed for 
+                    # halving to work
                     if self.get_load_factor() < LO_THRESHOLD and self.capacity >= 2*MIN_CAPACITY:
                         self.resize(self.capacity // 2)
 
