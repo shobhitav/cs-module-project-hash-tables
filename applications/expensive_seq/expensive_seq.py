@@ -2,7 +2,7 @@
 
 cache={}
 def expensive_seq(x, y, z):
-    # code Logic
+    
     # if x <= 0: y + z
     #  if x >  0: exps(x-1,y+1,z) + exps(x-2,y+2,z*2) + exps(x-3,y+3,z*3)
     if x<=0:
